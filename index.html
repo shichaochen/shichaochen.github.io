@@ -154,6 +154,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ssh链接时出错快速修复方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/26/ssh%E9%93%BE%E6%8E%A5%E6%97%B6%E5%87%BA%E9%94%99%E5%BF%AB%E9%80%9F%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">ssh链接时出错快速修复方法</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/26/ssh%E9%93%BE%E6%8E%A5%E6%97%B6%E5%87%BA%E9%94%99%E5%BF%AB%E9%80%9F%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-10-25T16:44:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>尝试用 ssh <a href="mailto:&#114;&#111;&#x6f;&#x74;&#64;&#x31;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#46;&#49;&#x2e;&#x35;">&#114;&#111;&#x6f;&#x74;&#64;&#x31;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#46;&#49;&#x2e;&#x35;</a>链接时，出现如下错误</p>
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>It is also possible that a host key has just been changed.<br>The fingerprint for the ED25519 key sent by the remote host is<br>SHA256:azyamy4EkIKI4aq9Gw1L9BwZI25P/n4jGZB6vFLmNV4.<br>Please contact your system administrator.<br>Add correct host key in /Users/shichaochen/.ssh/known_hosts to get rid of this message.<br>Offending ED25519 key in /Users/shichaochen/.ssh/known_hosts:1<br>ED25519 host key for 192.168.1.5 has changed and you have requested strict checking.<br>Host key verification failed.</p>
+<p>快速解决方法，只要键入<br>shichaochen@ShichaodeAir ~ % ssh-keygen -R 192.168.1.5</p>
+<p>如果会显示如下，就成功了。 </p>
+<h1 id="Host-192-168-1-5-found-line-1"><a href="#Host-192-168-1-5-found-line-1" class="headerlink" title="Host 192.168.1.5 found: line 1"></a>Host 192.168.1.5 found: line 1</h1><p>/Users/shichaochen/.ssh/known_hosts updated.<br>Original contents retained as /Users/shichaochen/.ssh/known_hosts.old</p>
+<p>再次尝试ssh链接，就成功了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/26/ssh%E9%93%BE%E6%8E%A5%E6%97%B6%E5%87%BA%E9%94%99%E5%BF%AB%E9%80%9F%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-学习搭建github上的hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
