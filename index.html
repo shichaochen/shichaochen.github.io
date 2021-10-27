@@ -174,15 +174,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>像素钟是个非常有趣味的项目，也是成功的技术创业典范。我搭建了多个像素钟，用椴木、3D打印等方法做了几种不同的外壳，各具特色，效果也各不相同。看着自制的成果，绚烂夺目，令人心醉神怡。<br>其实，像素钟制作很便捷，难度不大，但是服务器的选择和搭建是个难点，它需要7d24h一直工作，功耗和稳定性都要求比较高。笔记本和台式机上搭建的服务器也可以，但不大可能为了像素钟工作就一直开机。我也在群晖上用docker搭建了Awtrix服务器，操作顺利工作正常。但是群晖的功耗达到了65W，我平常都是关机状态。<br>玩客云非常便宜，才50元左右，使用了低功耗的Arm处理器，工作时只有1-2瓦。把玩客云上刷机为Armbian系统，使用固件为：<br>Linux onecloud 5.9.0-rc7-aml-s812 #20.12 SMP Sun Dec 13 22:41:27 CST 2020 armv7l<br>该固件自带docker和portaina管理界面，尝试在其上安装Awtrix容器，遇到不少问题，多次失败后，解决了很多问题，最后终于成功。</p>
+        <p>德国小哥的像素钟是个非常有趣味的项目，也是成功的技术创业典范。我搭建了多个像素钟，用椴木、3D打印等材料做了几种不同的外壳，各具特色，效果也各不相同。看着自制的成果，绚烂夺目的显示效果，令人心醉神怡。<br>像素钟电路制作很便捷，难度不大，但是服务器的选择和搭建是个难点，它需要7d24h一直工作，对功耗和稳定性要求比较高。在笔记本和台式机上搭建服务器也可以，但不大可能仅为了像素钟工作就一直开着机。我也在群晖上用docker搭建了Awtrix服务器，操作顺利工作正常。但是群晖的功耗达到了65W，利用率也不高，所以我平常都把它关机。<br>玩客云非常便宜，才50元左右，使用了低功耗的Arm处理器，工作时只有1-2瓦。把玩客云刷机为Armbian系统，使用固件为：<br>Linux onecloud 5.9.0-rc7-aml-s812 #20.12 SMP Sun Dec 13 22:41:27 CST 2020 armv7l<br>该固件自带docker和portaina管理界面，尝试在其上安装Awtrix容器，遇到不少问题，多次失败后，解决了很多问题，最后终于成功。</p>
 <p>不能用portainer直接拉取镜像，多次修改镜像源也无法成功。最后在ssh连接onecoud的root用户，用指令直接拉去成功。指令如下：<br>$ docker run –name AwTriX2 -p 7000:7000 -p 7001:7001 -p 5568:5568/udp –restart always -e TZ=Asia/Shanghai  whyet/awtrix2:latest </p>
 <p>Awtrix容器建立成功，但是服务器无法工作。错误指令为“Connecting to blueforcer.de (213.136.87.88:443),<br>ssl_client: blueforcer.de: certificate verification failed: certificate is not yet valid,<br>wget: error getting response: Connection reset by peer,…”，链接awtrix网站下载时，显示ssl认证失败。通过大量google检索，终于找到原因，是系统时间不匹配导致的。</p>
 <p>验证系统时间，果然是错误的时间，相差了几个月。安装ntp服务器，也没有时间同步成功。干脆直接修改系统时间。操作指令如下：</p>
 <p>$ date -R<br>$ apt-get install ntp<br>$ date -s 07:13:40<br>$ date -s 10/27/2021</p>
 <p>终于Awtrix在玩客云的docker 里配置成功，测试了一天，一切工作正常！yep！哈哈！</p>
 <p>容器log记录如下，就表示成功了：<br>wget: bad address ‘blueforcer.de’,<br>Connecting to blueforcer.de (213.136.87.88:443),<br>awtrix.jar             0% |                                | 98032  0:03:15 ETA,<br>awtrix.jar             9% |***                             | 1767k  0:00:19 ETA,<br>awtrix.jar            30% |*********                       | 5631k  0:00:06 ETA,<br>awtrix.jar            55% |*****************               | 10.2M  0:00:03 ETA,<br>awtrix.jar            80% |*************************       | 14.7M  0:00:01 ETA,<br>awtrix.jar           100% |********************************| 18.2M  0:00:00 ETA,<br>,<br>Redirecting logs to: 10-27-072622.txt,</p>
-<p>后记：板式很乱，不懂markdown语法，要学习一下了。</p>
-<p>后记：不知如何排版，要学习markdown语法了。</p>
+<p>后记：格式很乱，不懂markdown的语法，要学习一下了。</p>
 
       
 
@@ -245,7 +244,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>尝试用 ssh <a href="mailto:&#114;&#111;&#x6f;&#x74;&#64;&#x31;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#46;&#49;&#x2e;&#x35;">&#114;&#111;&#x6f;&#x74;&#64;&#x31;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#46;&#49;&#x2e;&#x35;</a>链接时，出现如下错误</p>
+        <p>尝试用 ssh <a href="mailto:&#x72;&#111;&#111;&#x74;&#64;&#49;&#x39;&#x32;&#46;&#x31;&#x36;&#56;&#x2e;&#49;&#46;&#53;">&#x72;&#111;&#111;&#x74;&#64;&#49;&#x39;&#x32;&#46;&#x31;&#x36;&#56;&#x2e;&#49;&#46;&#53;</a>链接时，出现如下错误</p>
 <p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>It is also possible that a host key has just been changed.<br>The fingerprint for the ED25519 key sent by the remote host is<br>SHA256:azyamy4EkIKI4aq9Gw1L9BwZI25P/n4jGZB6vFLmNV4.<br>Please contact your system administrator.<br>Add correct host key in /Users/shichaochen/.ssh/known_hosts to get rid of this message.<br>Offending ED25519 key in /Users/shichaochen/.ssh/known_hosts:1<br>ED25519 host key for 192.168.1.5 has changed and you have requested strict checking.<br>Host key verification failed.</p>
 <p>快速解决方法，只要键入<br>shichaochen@ShichaodeAir ~ % ssh-keygen -R 192.168.1.5</p>
 <p>如果会显示如下，就成功了。 </p>
